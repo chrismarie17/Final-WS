@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airlines Booking Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <button class="burger-btn" onclick="toggleMenu()">☰</button>
+        <ul class="menu">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="bookings.html">Bookings</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <h1>Welcome to Your Dashboard</h1>
+        <p>Here's a quick overview of your account:</p>
+
+        <!-- Add and Edit Flight Form -->
+        <div class="dashboard-section">
+            <h2>Add / Edit Flight</h2>
+            <form id="flightForm" onsubmit="handleFormSubmit(event)">
+                <input type="hidden" id="flightId">
+                <label for="flightNumber">Flight Number:</label>
+                <input type="text" id="flightNumber" required>
+                <label for="departure">Departure:</label>
+                <input type="text" id="departure" required>
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" required>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+
+        <!-- Bookings Table -->
+        <div class="dashboard-section">
+            <h2>Upcoming Flights</h2>
+            <table class="bookings-table">
+                <thead>
+                    <tr>
+                        <th>Flight Number</th>
+                        <th>Departure</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingsTableBody">
+                    <!-- Flights will be dynamically populated here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Notifications</h2>
+            <p>You have no new notifications at the moment.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
